@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<title>Posts</title>
+
+{{range $post := .}}
+<h1 id="{{$post.ID}}">{{$post.ID}}</h1>
+<div>{{$post.Body}}</div>
+{{end}}
+
+<form action="/posts/new" method="POST">
+    <div><textarea name="body" rows="20" cols="80"></textarea></div>
+    <div><input type="submit" value="Save"></div>
+</form>
